@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | GSAP</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/gsap.png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/common.css">
+  <link rel="stylesheet" href="./styles/main.css">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
+  <script src="./js/animation.js"></script>
+</head>
+<body>
+  <div class="alert_box">
+    <div class="inner"><p>I am working on a portfolio using GSPA.</p></div>
+  </div>
+  <nav>
+    <div class="inner">
+      <a class="logo" href="javascript:;">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 82 30">
+          <title>GSAP</title>
+          <path fill="#FFFCE1" d="M23.81 14.012v.013l-1.075 4.666c-.058.264-.322.457-.626.457H20.81a.218.218 0 0 0-.208.156c-1.198 4.064-2.82 6.857-4.962 8.534-1.822 1.428-4.068 2.094-7.069 2.094-2.696 0-4.514-.867-6.056-2.579-2.038-2.262-2.88-5.966-2.37-10.428C1.065 8.548 5.41.095 13.776.095c2.545-.022 4.543.763 5.933 2.33 1.47 1.658 2.216 4.154 2.22 7.422a.55.55 0 0 1-.549.536h-6.13a.42.42 0 0 1-.407-.41c-.05-2.26-.72-3.36-2.052-3.36-2.35 0-3.736 3.19-4.471 4.958-1.027 2.47-1.55 5.153-1.447 7.825.049 1.244.249 2.993 1.43 3.718 1.047.642 2.541.216 3.446-.495.904-.712 1.632-1.943 1.938-3.066.043-.156.046-.277.005-.331-.043-.056-.162-.069-.253-.069h-1.574a.572.572 0 0 1-.438-.202.42.42 0 0 1-.087-.362l1.076-4.674c.053-.239.27-.42.537-.452v-.012h10.33c.024 0 .049 0 .072.005.268.035.457.284.452.556h.002Z"></path>
+          <path fill="#FFFCE1" d="M41.595 8.65a.548.548 0 0 1-.548.53h-5.646c-.37 0-.679-.3-.679-.665 0-1.647-.57-2.449-1.736-2.449s-1.918.716-1.94 1.967c-.025 1.395.764 2.663 3.01 4.841 2.957 2.774 4.142 5.231 4.085 8.479C38.048 26.605 34.477 30 29.043 30c-2.775 0-4.895-.742-6.305-2.206-1.431-1.487-2.087-3.669-1.95-6.485a.548.548 0 0 1 .549-.53h5.84a.55.55 0 0 1 .422.208.48.48 0 0 1 .106.384c-.065 1.016.112 1.775.512 2.195.256.272.613.41 1.058.41 1.079 0 1.711-.762 1.735-2.09.02-1.148-.343-2.154-2.321-4.189-2.555-2.496-4.846-5.075-4.775-9.13.042-2.352.976-4.503 2.631-6.057C28.295.868 30.688 0 33.466 0c2.783.02 4.892.814 6.269 2.36 1.304 1.465 1.931 3.581 1.862 6.29h-.002Z"></path>
+          <path fill="#FFFCE1" d="m59.095 29.012.037-27.933a.525.525 0 0 0-.529-.533h-8.738c-.294 0-.423.253-.507.42L36.706 28.841v.005l-.005.007c-.14.343.126.71.497.71h6.108c.33 0 .549-.1.656-.308l1.213-2.915c.149-.389.177-.425.601-.425h5.836c.406 0 .414.008.408.405l-.131 2.71a.525.525 0 0 0 .528.533h6.171a.523.523 0 0 0 .403-.182.458.458 0 0 0 .104-.369Zm-10.81-9.326a1.67 1.67 0 0 1-.138-.005.147.147 0 0 1-.13-.184c.012-.04.029-.095.054-.162l4.376-10.828a2.99 2.99 0 0 1 .136-.313c.071-.146.157-.156.184-.048.023.09-.502 11.118-.502 11.118-.041.413-.06.43-.467.464l-3.509-.04h-.008l.003-.002Z"></path>
+          <path fill="#FFFCE1" d="M71.543.546h-4.639c-.245 0-.52.13-.584.422l-6.456 28.03a.423.423 0 0 0 .088.363.573.573 0 0 0 .437.202h5.798c.312 0 .525-.153.583-.418l.704-3.177c.05-.248-.036-.44-.258-.556a52.313 52.313 0 0 1-.312-.162l-1.005-.523-1-.522-.387-.201a.186.186 0 0 1-.103-.17.199.199 0 0 1 .2-.194l3.177.014c.95.005 1.901-.062 2.836-.234 6.58-1.215 10.95-6.485 11.076-13.656.108-6.12-3.308-9.221-10.15-9.221l-.005.003Zm-1.579 16.68h-.124c-.279 0-.328-.03-.336-.04-.005-.007 1.832-8.073 1.833-8.084.047-.233.045-.367-.099-.446-.184-.102-2.866-1.516-2.866-1.516a.189.189 0 0 1-.101-.172.197.197 0 0 1 .197-.192h4.241c1.32.04 2.056 1.221 2.021 3.238-.061 3.491-1.721 7.09-4.766 7.213Z" data-svg-origin="59.85385513305664 0.5430021286010742" transform="matrix(1,0,0,1,0,0)"></path>
+        </svg>
+      </a>
+      <a class="get_button" href="javascript:;">Get GSAP</a>
+    </div>
+  </nav>
+  <main>
+    <section id="sec01">
+      <div class="inner">
+        <div class="cont_wrap">
+          <div class="title_wrap">
+            <div class="fir_word">
+              <span>A</span>
+              <span class="n">
+                <div class="windmill">
+                  <svg viewBox="0 0 137 135" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true">
+                    <path d="M84.1148 67.3453H136.194C136.637 67.3453 137 67.7028 137 68.1397V134.043C137 134.484 136.633 134.845 136.186 134.841C99.0222 134.416 68.9737 104.827 68.502 68.2191V134.206C68.502 134.643 68.1392 135 67.6958 135H0.814284C0.366822 135 -2.06673e-05 134.639 0.00401052 134.198C0.439379 97.2879 30.9354 67.5042 68.498 67.5002H0.806238C0.362807 67.5002 0 67.1427 0 66.7057V0.802561C0 0.361644 0.366822 0.000171863 0.814284 0.00414409C37.9778 0.429172 68.0263 30.0183 68.498 66.6263V0.794617C68.498 0.357672 68.8608 0.000171819 69.3042 0.000171819H136.186C136.633 0.000171819 137 0.361644 136.996 0.802561C136.621 32.4969 114.079 58.94 83.9334 65.7802C83.0022 65.9907 83.1594 67.3453 84.1189 67.3453H84.1148Z" fill="url(#paint0_linear_1655_45397)"></path>
+                    <path d="M84.1148 67.3453H136.194C136.637 67.3453 137 67.7028 137 68.1397V134.043C137 134.484 136.633 134.845 136.186 134.841C99.0222 134.416 68.9737 104.827 68.502 68.2191V134.206C68.502 134.643 68.1392 135 67.6958 135H0.814284C0.366822 135 -2.06673e-05 134.639 0.00401052 134.198C0.439379 97.2879 30.9354 67.5042 68.498 67.5002H0.806238C0.362807 67.5002 0 67.1427 0 66.7057V0.802561C0 0.361644 0.366822 0.000171863 0.814284 0.00414409C37.9778 0.429172 68.0263 30.0183 68.498 66.6263V0.794617C68.498 0.357672 68.8608 0.000171819 69.3042 0.000171819H136.186C136.633 0.000171819 137 0.361644 136.996 0.802561C136.621 32.4969 114.079 58.94 83.9334 65.7802C83.0022 65.9907 83.1594 67.3453 84.1189 67.3453H84.1148Z" fill="url(#pattern-home-hero-windmill-0)" fill-opacity="0.6" style="mix-blend-mode:multiply"></path>
+                    <defs>
+                      <pattern id="pattern-home-hero-windmill-0" patternContentUnits="objectBoundingBox" width="1.45985" height="1.48148">
+                        <use xlink:href="#svg-noise" transform="scale(0.00291971 0.00296296)"></use>
+                      </pattern>
+                      <linearGradient id="paint0_linear_1655_45397" x1="-76.6791" y1="-15.6157" x2="165.682" y2="81.0082" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.427083" stop-color="#FF8709"></stop>
+                        <stop offset="0.791667" stop-color="#F7BDF8"></stop>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+                <span>n</span>
+              </span>
+              <span>i</span>
+              <span>m</span>
+              <span>a</span>
+              <span>t</span>
+              <span>e</span>
+            </div>
+            <div class="sec_word">
+              <span>a</span>
+              <span>n</span>
+              <span>y</span>
+              <span>t</span>
+              <span class="h">
+                <div class="squiggle"><img src="https://gsap.com/tf-assets/worm-e8f0c8f6.png" alt="squiggle"></div>
+                <span>h</span>
+              </span>
+              <span class="i">i</span>
+              <span>n</span>
+              <span>g</span>
+            </div>
+          </div>
+          <div class="subtitle_wrap">
+            <div class="brace_wrap">
+              <div class="brace">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 27 78" aria-hidden="true">
+                  <path fill="#FFFCE1" d="M26.52 77.21h-5.75c-6.83 0-12.38-5.56-12.38-12.38V48.38C8.39 43.76 4.63 40 .01 40v-4c4.62 0 8.38-3.76 8.38-8.38V12.4C8.38 5.56 13.94 0 20.77 0h5.75v4h-5.75c-4.62 0-8.38 3.76-8.38 8.38V27.6c0 4.34-2.25 8.17-5.64 10.38 3.39 2.21 5.64 6.04 5.64 10.38v16.45c0 4.62 3.76 8.38 8.38 8.38h5.75v4.02Z"></path>
+                </svg>
+              </div>
+              <p>GSAP – A wildly robust JavaScript animation library built for professionals</p>
+              <div class="brace">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 27 78" aria-hidden="true">
+                  <path fill="#FFFCE1" d="M26.52 77.21h-5.75c-6.83 0-12.38-5.56-12.38-12.38V48.38C8.39 43.76 4.63 40 .01 40v-4c4.62 0 8.38-3.76 8.38-8.38V12.4C8.38 5.56 13.94 0 20.77 0h5.75v4h-5.75c-4.62 0-8.38 3.76-8.38 8.38V27.6c0 4.34-2.25 8.17-5.64 10.38 3.39 2.21 5.64 6.04 5.64 10.38v16.45c0 4.62 3.76 8.38 8.38 8.38h5.75v4.02Z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="button_wrap">
+              <a href="javascript:;">
+                <span>Get GSAP</span>
+                <span class="button_icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 11" aria-hidden="true">
+                    <path fill="#fffce1" d="M4.055 0v7.71l-3-3L0 5.79l4.805 4.804 4.804-4.805-1.054-1.078-3 3V0h-1.5Z"></path>
+                  </svg>
+                </span>
+              </a>          
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="sec02">
+      <div class="inner">
+        <div class="cont_wrap">
+          <div class="brace_wrap">
+            <div class="brace">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 27 78" aria-hidden="true">
+                <path fill="#FFFCE1" d="M26.52 77.21h-5.75c-6.83 0-12.38-5.56-12.38-12.38V48.38C8.39 43.76 4.63 40 .01 40v-4c4.62 0 8.38-3.76 8.38-8.38V12.4C8.38 5.56 13.94 0 20.77 0h5.75v4h-5.75c-4.62 0-8.38 3.76-8.38 8.38V27.6c0 4.34-2.25 8.17-5.64 10.38 3.39 2.21 5.64 6.04 5.64 10.38v16.45c0 4.62 3.76 8.38 8.38 8.38h5.75v4.02Z"></path>
+              </svg>
+            </div>
+            <p>Why GSAP®</p>
+            <div class="brace">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 27 78" aria-hidden="true">
+                <path fill="#FFFCE1" d="M26.52 77.21h-5.75c-6.83 0-12.38-5.56-12.38-12.38V48.38C8.39 43.76 4.63 40 .01 40v-4c4.62 0 8.38-3.76 8.38-8.38V12.4C8.38 5.56 13.94 0 20.77 0h5.75v4h-5.75c-4.62 0-8.38 3.76-8.38 8.38V27.6c0 4.34-2.25 8.17-5.64 10.38 3.39 2.21 5.64 6.04 5.64 10.38v16.45c0 4.62 3.76 8.38 8.38 8.38h5.75v4.02Z"></path>
+              </svg>
+            </div>
+          </div>
+          <a href="javascript:;" class="ani_underline">
+            <span>GSAP allows you to effortlessly animate anything JS can touch. Delivering silky-smooth performance and unmatched support so you can focus on the fun stuff.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <main id="hor">
+      <section id="sec03">
+        <div class="inner">
+          <div class="cont_wrap">
+            <div class="heading">
+              <h3><span>Animate anything</span></h3>
+              <h2><span>That's right, Anything</span></h2>
+            </div>
+            <div class="desc">
+              <p>Whether you're animating UI, SVG or creating immersive WebGL experiences, GSAP has your back.</p>
+            </div>
+            <div class="shape">
+              <svg width="496" height="248" viewBox="0 0 496 248" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="half-circle" aria-hidden="true">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M496 248C496 111.033 384.967 5.987e-06 248 0C111.033 -5.987e-06 5.987e-06 111.033 0 248L496 248Z" fill="url(#paint0_radial_2080_56314)"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M496 248C496 111.033 384.967 5.987e-06 248 0C111.033 -5.987e-06 5.987e-06 111.033 0 248L496 248Z" fill="url(#pattern-home-animate-half-circle-0)" fill-opacity="0.6" style="mix-blend-mode:multiply"></path>
+                <defs>
+                <pattern id="pattern-home-animate-half-circle-0" patternContentUnits="objectBoundingBox" width="0.201613" height="0.403226">
+                <use xlink:href="#svg-noise" transform="scale(0.000403226 0.000806452)"></use>
+                </pattern>
+                <radialGradient id="paint0_radial_2080_56314" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(137.354 461.661) rotate(-54.9042) scale(517.614 425.925)">
+                <stop offset="0.380208" stop-color="#D1FFBC"></stop>
+                <stop offset="0.734375" stop-color="#0AE448"></stop>
+                <stop offset="1" stop-color="#0AA3E4"></stop>
+                </radialGradient>
+                </defs>
+              </svg>
+              <svg width="248" height="248" viewBox="0 0 248 248" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flower" aria-hidden="true">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M62 124C27.7583 124 0 151.758 0 186C0 220.242 27.7583 248 62 248C96.2417 248 124 220.242 124 186C124 220.242 151.758 248 186 248C220.242 248 248 220.242 248 186C248 151.758 220.242 124 186 124C220.242 124 248 96.2417 248 62C248 27.7583 220.242 0 186 0C151.758 0 124 27.7583 124 62C124 27.7583 96.2417 0 62 0C27.7583 0 0 27.7583 0 62C0 96.2417 27.7583 124 62 124Z" fill="url(#paint0_radial_2080_56318)"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M62 124C27.7583 124 0 151.758 0 186C0 220.242 27.7583 248 62 248C96.2417 248 124 220.242 124 186C124 220.242 151.758 248 186 248C220.242 248 248 220.242 248 186C248 151.758 220.242 124 186 124C220.242 124 248 96.2417 248 62C248 27.7583 220.242 0 186 0C151.758 0 124 27.7583 124 62C124 27.7583 96.2417 0 62 0C27.7583 0 0 27.7583 0 62C0 96.2417 27.7583 124 62 124Z" fill="url(#paint1_radial_2080_56318)"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M62 124C27.7583 124 0 151.758 0 186C0 220.242 27.7583 248 62 248C96.2417 248 124 220.242 124 186C124 220.242 151.758 248 186 248C220.242 248 248 220.242 248 186C248 151.758 220.242 124 186 124C220.242 124 248 96.2417 248 62C248 27.7583 220.242 0 186 0C151.758 0 124 27.7583 124 62C124 27.7583 96.2417 0 62 0C27.7583 0 0 27.7583 0 62C0 96.2417 27.7583 124 62 124Z" fill="url(#pattern-home-animate-flower-0)" fill-opacity="0.6" style="mix-blend-mode:multiply"></path>
+                <defs>
+                <pattern id="pattern-home-animate-flower-0" patternContentUnits="objectBoundingBox" width="0.403226" height="0.403226">
+                <use xlink:href="#svg-noise" transform="scale(0.000806452)"></use>
+                </pattern>
+                <radialGradient id="paint0_radial_2080_56318" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(76.3114 176.859) rotate(-90) scale(194.26 195.353)">
+                <stop stop-color="#E193FF"></stop>
+                <stop offset="0.6721" stop-color="#8E78DA"></stop>
+                <stop offset="0.7378" stop-color="#937DDB"></stop>
+                <stop offset="0.8164" stop-color="#A28BDD"></stop>
+                <stop offset="0.9014" stop-color="#BAA3E2"></stop>
+                <stop offset="0.9905" stop-color="#DBC3E7"></stop>
+                <stop offset="1" stop-color="#DFC7E8"></stop>
+                </radialGradient>
+                <radialGradient id="paint1_radial_2080_56318" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-27 234) rotate(-68.2758) scale(275.572 434.122)">
+                <stop stop-color="#FFE2F2"></stop>
+                <stop offset="0.609375" stop-color="#FFADDA"></stop>
+                <stop offset="0.776042" stop-color="#FF7CC5"></stop>
+                <stop offset="0.911458" stop-color="#FF71BF"></stop>
+                <stop offset="1" stop-color="#F84FAC"></stop>
+                </radialGradient>
+                </defs>
+              </svg>
+              <svg width="52" height="62" viewBox="0 0 52 62" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="timer" aria-hidden="true">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M29.2532 28.1943C27.7212 29.751 27.7212 32.249 29.2532 33.8057L50.3023 55.1943C52.7911 57.7232 50.9996 62 47.4513 62H26H4.54865C1.00044 62 -0.79113 57.7232 1.69768 55.1943L22.7468 33.8057C24.2788 32.249 24.2788 29.7511 22.7468 28.1943L1.69769 6.80572C-0.791119 4.27676 1.00044 5.24575e-07 4.54865 8.34769e-07L26 2.71011e-06L47.4514 4.58544e-06C50.9996 4.89564e-06 52.7911 4.27676 50.3023 6.80572L29.2532 28.1943Z" fill="url(#paint0_linear_2080_57096)"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M29.2532 28.1943C27.7212 29.751 27.7212 32.249 29.2532 33.8057L50.3023 55.1943C52.7911 57.7232 50.9996 62 47.4513 62H26H4.54865C1.00044 62 -0.79113 57.7232 1.69768 55.1943L22.7468 33.8057C24.2788 32.249 24.2788 29.7511 22.7468 28.1943L1.69769 6.80572C-0.791119 4.27676 1.00044 5.24575e-07 4.54865 8.34769e-07L26 2.71011e-06L47.4514 4.58544e-06C50.9996 4.89564e-06 52.7911 4.27676 50.3023 6.80572L29.2532 28.1943Z" fill="url(#pattern-home-animate-timer-0)"></path>
+                <defs>
+                <pattern id="pattern-home-animate-timer-0" patternContentUnits="objectBoundingBox" width="8.06452" height="8.06452">
+                <use xlink:href="#svg-noise" transform="scale(0.016129)"></use>
+                </pattern>
+                <linearGradient id="paint0_linear_2080_57096" x1="-7.77612" y1="17.8134" x2="63.2463" y2="31" gradientUnits="userSpaceOnUse">
+                <stop offset="0.0242443" stop-color="#EDBEFF"></stop>
+                <stop offset="0.84375" stop-color="#8E78DA"></stop>
+                </linearGradient>
+                </defs>
+              </svg>
+              <img class="circle" src="https://gsap.com/tf-assets/circle-448f73d1.png" alt="">
+              <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="diamond" aria-hidden="true">
+                <path d="M27.1716 1.82843C28.7337 0.266333 31.2663 0.26633 32.8284 1.82843L58.1716 27.1716C59.7337 28.7337 59.7337 31.2663 58.1716 32.8284L32.8284 58.1716C31.2663 59.7337 28.7337 59.7337 27.1716 58.1716L1.82843 32.8284C0.266333 31.2663 0.26633 28.7337 1.82843 27.1716L27.1716 1.82843Z" fill="url(#paint0_linear_2080_57095)"></path>
+                <path d="M27.1716 1.82843C28.7337 0.266333 31.2663 0.26633 32.8284 1.82843L58.1716 27.1716C59.7337 28.7337 59.7337 31.2663 58.1716 32.8284L32.8284 58.1716C31.2663 59.7337 28.7337 59.7337 27.1716 58.1716L1.82843 32.8284C0.266333 31.2663 0.26633 28.7337 1.82843 27.1716L27.1716 1.82843Z" fill="url(#pattern-home-animate-diamond-0)" fill-opacity="0.6" style="mix-blend-mode:multiply"></path>
+                <defs>
+                <pattern id="pattern-home-animate-diamond-0" patternContentUnits="objectBoundingBox" width="3.22581" height="3.22581">
+                <use xlink:href="#svg-noise" transform="scale(0.00645161)"></use>
+                </pattern>
+                <linearGradient id="paint0_linear_2080_57095" x1="-35.7015" y1="-8.17164" x2="74.4179" y2="35.0896" gradientUnits="userSpaceOnUse">
+                <stop offset="0.427083" stop-color="#FF8709"></stop>
+                <stop offset="0.791667" stop-color="#F7BDF8"></stop>
+                </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="sec04">
+        <div class="scroll_wrap">
+          <p class="text_group">
+            <span class="green_gradient">Nice and</span>
+            <span class="purple_gradient">Easy</span>
+            <span class="orange_gradient">Easing</span>
+          </p>
+          <p class="sentence_group">
+            <span>Add personality to</span>
+          </p>
+        </div>
+      </section>
+      <section id="sec05">
+        <p class="sentence_group">
+          <span>&nbsp;your animations with GSAP.</span>
+        </p>
+      </section>
+    </main>
+    <section id="sec06">
+      <div class="inner">
+        <div class="cont_wrap">
+          <div class="brace_wrap">
+            <div class="brace">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 27 78" aria-hidden="true">
+                <path fill="#FFFCE1" d="M26.52 77.21h-5.75c-6.83 0-12.38-5.56-12.38-12.38V48.38C8.39 43.76 4.63 40 .01 40v-4c4.62 0 8.38-3.76 8.38-8.38V12.4C8.38 5.56 13.94 0 20.77 0h5.75v4h-5.75c-4.62 0-8.38 3.76-8.38 8.38V27.6c0 4.34-2.25 8.17-5.64 10.38 3.39 2.21 5.64 6.04 5.64 10.38v16.45c0 4.62 3.76 8.38 8.38 8.38h5.75v4.02Z"></path>
+              </svg>
+            </div>
+            <p>GSAP® Tools</p>
+            <div class="brace">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 27 78" aria-hidden="true">
+                <path fill="#FFFCE1" d="M26.52 77.21h-5.75c-6.83 0-12.38-5.56-12.38-12.38V48.38C8.39 43.76 4.63 40 .01 40v-4c4.62 0 8.38-3.76 8.38-8.38V12.4C8.38 5.56 13.94 0 20.77 0h5.75v4h-5.75c-4.62 0-8.38 3.76-8.38 8.38V27.6c0 4.34-2.25 8.17-5.64 10.38 3.39 2.21 5.64 6.04 5.64 10.38v16.45c0 4.62 3.76 8.38 8.38 8.38h5.75v4.02Z"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="cont">
+            <div class="svg_wrap">
+              <svg width="380" height="240" viewBox="0 0 380 332" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true">
+                <g id="home-tools-scroll-curve">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M190 171.267C200.346 171.267 208.733 179.654 208.733 190V246.197C208.733 293.491 247.072 331.83 294.366 331.83C341.66 331.83 380 293.491 380 246.197V190C380 85.0658 294.934 0 190 0C85.0663 0 0.000549316 85.0658 0.000549316 190V246.197C0.000549316 293.491 38.34 331.83 85.6342 331.83C132.928 331.83 171.268 293.491 171.268 246.197V190C171.268 179.654 179.655 171.267 190 171.267Z" fill="url(#paint0_linear_1790_33970)"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M190 171.267C200.346 171.267 208.733 179.654 208.733 190V246.197C208.733 293.491 247.072 331.83 294.366 331.83C341.66 331.83 380 293.491 380 246.197V190C380 85.0658 294.934 0 190 0C85.0663 0 0.000549316 85.0658 0.000549316 190V246.197C0.000549316 293.491 38.34 331.83 85.6342 331.83C132.928 331.83 171.268 293.491 171.268 246.197V190C171.268 179.654 179.655 171.267 190 171.267Z" fill="url(#pattern-home-tools-scroll-0)" fill-opacity="0.6" style="mix-blend-mode:multiply"></path>
+                </g>
+            
+                <path id="home-tools-scroll-path" d="M 85 246.1967 V 190.83 C 85 132.66 131.66 85.5 189.83 85.5 C 248 85.5 294.5 132.66 294.5 190.83 V 246.1967"></path>
+            
+                <path id="home-tools-scroll-mask" d="M 84.5 246.1967 V 190.83 C 84.5 132.66 131.66 85.5 189.83 85.5 C 248 85.5 295.16 132.66 295.16 190.83 V 333" stroke="var(--color-just-black)" stroke-width="175" stroke-miterlimit="10" style="stroke-dashoffset: -449.112; stroke-dasharray: 79.2728px, 449.412px;"></path>
+                
+                <g id="home-tools-scroll-ball" data-svg-origin="85.26800537109375 246.56299591064453" transform="matrix(1,0,0,1,209.23196,-0.36626)" style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px;">
+                    <rect width="172" height="172" rx="85.6337" transform="matrix(-1 0 0 1 171.268 160.563)" fill="url(#paint1_linear_1790_33970)"></rect>
+                    <rect width="172" height="172" rx="85.6337" transform="matrix(-1 0 0 1 171.268 160.563)" fill="url(#pattern-home-tools-scroll-1)" fill-opacity="0.6" style="mix-blend-mode:multiply"></rect>
+                </g>
+                
+                <defs>
+                    <pattern id="pattern-home-tools-scroll-0" patternContentUnits="objectBoundingBox" width="0.526317" height="0.602717">
+                    <use xlink:href="#svg-noise" transform="scale(0.00105263 0.00120543)"></use>
+                    </pattern>
+                    <pattern id="pattern-home-tools-scroll-1" patternContentUnits="objectBoundingBox" width="1.16776" height="1.16776">
+                    <use xlink:href="#svg-noise" transform="scale(0.00233553)"></use>
+                    </pattern>
+                    <linearGradient id="paint0_linear_1790_33970" x1="412.458" y1="-10.4465" x2="100.768" y2="481.138" gradientUnits="userSpaceOnUse">
+                    <stop offset="0.26957" stop-color="#FEC5FB"></stop>
+                    <stop offset="0.838196" stop-color="#00BAE2"></stop>
+                    </linearGradient>
+                    <linearGradient id="paint1_linear_1790_33970" x1="-14.6291" y1="-5.39174" x2="154.494" y2="227.531" gradientUnits="userSpaceOnUse">
+                    <stop offset="0.26957" stop-color="#FEC5FB"></stop>
+                    <stop offset="0.838196" stop-color="#00BAE2"></stop>
+                    </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div class="text_wrap">
+              <h3>Scroll</h3>
+              <p>Turn scrolling into silky-smooth storytelling.</p>
+              <a href="">Explore Scroll</a>
+            </div>
+          </div>
+          <div class="cont">
+            <div class="svg_wrap">
+              <svg width="372" height="270" viewBox="0 0 372 370" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true">
+                <g filter="url(#goo)">
+                  <g fill="url(#paint0_radial_1655_45341)">
+                      <path class="home-tools-svg-circle-small" d="M190 275C190 327.467 147.467 370 95 370C42.5329 370 0 327.467 0 275C0 222.533 42.5329 180 95 180C147.467 180 190 222.533 190 275Z" data-svg-origin="152 218" transform="matrix(1,0,0,1,0,0)" style="translate: none; rotate: none; scale: none; transform-origin: 0px 0px;"></path>
+                      <path class="home-tools-svg-circle-small" d="M190 275C190 327.467 147.467 370 95 370C42.5329 370 0 327.467 0 275C0 222.533 42.5329 180 95 180C147.467 180 190 222.533 190 275Z" fill="url(#pattern-home-tools-svg-0)" style="mix-blend-mode:multiply"></path>
+          
+                      <path class="home-tools-svg-circle" d="M85 7.99999C85 3.58172 88.5817 0 93 0H363.884C368.302 0 371.884 3.58172 371.884 8V277C371.884 281.418 368.302 285 363.884 285H93C88.5817 285 85 281.418 85 277V7.99999Z" data-original="M190 275C190 327.467 147.467 370 95 370C42.5329 370 0 327.467 0 275C0 222.533 42.5329 180 95 180C147.467 180 190 222.533 190 275Z"></path>
+                      <path class="home-tools-svg-circle" d="M85 7.99999C85 3.58172 88.5817 0 93 0H363.884C368.302 0 371.884 3.58172 371.884 8V277C371.884 281.418 368.302 285 363.884 285H93C88.5817 285 85 281.418 85 277V7.99999Z" fill="url(#pattern-home-tools-svg-0)" style="mix-blend-mode:multiply" data-original="M190 275C190 327.467 147.467 370 95 370C42.5329 370 0 327.467 0 275C0 222.533 42.5329 180 95 180C147.467 180 190 222.533 190 275Z"></path>
+                  </g>
+                </g>
+            
+                <path id="home-tools-svg-square-large" d="M85 7.99999C85 3.58172 88.5817 0 93 0H363.884C368.302 0 371.884 3.58172 371.884 8V277C371.884 281.418 368.302 285 363.884 285H93C88.5817 285 85 281.418 85 277V7.99999Z"></path>
+            
+                <defs>
+                  <pattern id="pattern-home-tools-svg-0" patternContentUnits="objectBoundingBox" width="0.261429" height="0.263158">
+                      <use xlink:href="#svg-noise" transform="scale(0.000522859 0.000526316)"></use>
+                  </pattern>
+                  
+                  <radialGradient id="paint0_radial_1655_45341" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-4.01487e-06 268.924) rotate(-48.1016) scale(361.295 241.508)">
+                      <stop stop-color="#FFD9B0"></stop>
+                      <stop offset="0.807292" stop-color="#FD9F3B"></stop>
+                      <stop offset="1" stop-color="#FF8709"></stop>
+                  </radialGradient>
+          
+                  <filter id="goo">
+                      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"></feGaussianBlur>
+                      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo"></feColorMatrix>
+                      <feComposite in="SourceGraphic" in2="goo" operator="atop"></feComposite>
+                  </filter>
+                </defs>
+              </svg>
+            </div>
+            <div class="text_wrap">
+              <h3>SVG</h3>
+              <p>Move, morph and much more with our SVG plugins.</p>
+              <a href="">Explore SVG</a>
+            </div>
+          </div>
+          <div class="cont">
+            <div class="svg_wrap">
+              <div class="text_flair">
+                <div id="home-tools-text-square-wrapper">
+                  <svg id="home-tools-text-square" viewBox="0 0 191 190" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <rect x="0.751099" y="190.001" width="190" height="190" rx="8" transform="rotate(-90 0.751099 190.001)" fill="url(#home-tools-text-square-radial)"></rect>
+                    <rect x="0.751099" y="190.001" width="190" height="190" rx="8" transform="rotate(-90 0.751099 190.001)" fill="url(#home-tools-text-square-pattern)" fill-opacity="0.6"></rect>
+                    <defs>
+                      <pattern id="home-tools-text-square-pattern" patternContentUnits="objectBoundingBox" width="0.526316" height="0.526316">
+                        <use xlink:href="#svg-noise" transform="scale(0.00105263)"></use>
+                      </pattern>
+
+                      <radialGradient id="home-tools-text-square-radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(230.59 344.759) rotate(-142.224) scale(310.168 148.907)">
+                        <stop offset="0.270833" stop-color="#DFDCFF"></stop>
+                        <stop offset="1" stop-color="#A69EFF"></stop>
+                      </radialGradient>
+                    </defs>
+                  </svg>
+                </div>                
+
+                <svg class="text_text" viewBox="0 0 134 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M45.3424 88.5169L45.3424 14.1349L74.6177 14.1349V0.565247L0.864014 0.565247L0.864014 14.1349L30.265 14.1349L30.265 88.5169H45.3424Z" fill="#FFFCE1"></path>
+                  <path d="M102.875 90.4015C118.581 90.4015 129.763 81.732 133.156 67.4085H118.706C116.445 74.0677 110.665 77.837 103.001 77.837C91.6927 77.837 84.4053 69.9214 83.4001 58.2364L133.407 58.2364V54.7183C133.03 33.1073 120.465 19.9146 101.619 19.9146C83.0232 19.9146 68.574 33.4843 68.574 55.4722C68.574 75.8267 82.5206 90.4015 102.875 90.4015ZM84.0283 47.8078C86.29 38.2588 92.8235 32.4791 101.619 32.4791C110.288 32.4791 116.194 38.2588 118.078 47.8078L84.0283 47.8078Z" fill="#FFFCE1"></path>
+                </svg>
+
+                <svg class="text_text" viewBox="0 0 113 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16.7684 89.899L32.474 66.9059L48.054 89.899H64.7648L40.7666 56.603L64.3879 23.307L47.8027 23.307L32.474 45.5462L17.0197 23.307L0.434492 23.307L24.0558 56.603L0.0575562 89.899H16.7684Z" fill="#FFFCE1"></path>
+                  <path d="M111.358 89.899L111.358 77.3344H103.819C98.2905 77.3344 95.4006 74.1933 95.4006 68.5393V35.8715L112.614 35.8715L112.614 23.307L95.4006 23.307V0.565247L80.5745 0.565247V23.307L68.8895 23.307L68.8895 35.8715L80.5745 35.8715V69.5444C80.5745 82.7372 88.3645 89.899 102.814 89.899H111.358Z" fill="#FFFCE1"></path>
+                </svg>
+
+                <div id="home-tools-text-circle-wrapper">
+                  <svg viewBox="0 0 191 190" fill="none" id="home-tools-text-circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <rect x="0.751099" y="190.001" width="190" height="190" rx="95" transform="rotate(-90 0.751099 190.001)" fill="url(#home-tools-text-circle-radial)"></rect>
+                    <rect x="0.751099" y="190.001" width="190" height="190" rx="95" transform="rotate(-90 0.751099 190.001)" fill="url(#home-tools-text-circle-pattern)" fill-opacity="0.6"></rect>
+
+                    <defs>
+                      <pattern id="home-tools-text-circle-pattern" patternContentUnits="objectBoundingBox" width="0.526316" height="0.526316">
+                        <use xlink:href="#svg-noise" transform="scale(0.00105263)"></use>
+                      </pattern>
+
+                      <radialGradient id="home-tools-text-circle-radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(230.59 344.759) rotate(-142.224) scale(310.168 148.907)">
+                        <stop offset="0.270833" stop-color="#DFDCFF"></stop>
+                        <stop offset="1" stop-color="#A69EFF"></stop>
+                      </radialGradient>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="text_wrap">
+              <h3>Text</h3>
+              <p>Leave them lost for words with seamless text effects.</p>
+              <a href="">Explore Text</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>This website is a clone-coded portfolio.</p>
+    <p>Copyright 2024. KIMSOHEE All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
