@@ -11,7 +11,13 @@ body {
   width: 100%;
   background-color: #0e100f; 
   font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: .9rem;
   letter-spacing: -.01em;
+  ::selection {
+    background-color: #0ae448;
+    color: #0e100f;
+  }
 }
 ol,ul,li {
   list-style: none;
@@ -25,56 +31,11 @@ table {
   border-spacing: 0;
 }
 
-.d-block {
-  display: block;
-}
-.d-grid {
-  display: grid;
-}
-.d-flex {
-  display: flex !important;
-}
-.flex-wrap {
-  flex-wrap: wrap;
-}
-.flex-column {
-  flex-direction: column;
-}
-.flex-space-between {
-  justify-content: space-between;
-}
-.flex-space-around {
-  justify-content: space-around;
-}
-.flex-justify-center {
-  justify-content: center;
-}
-.flex-align-center {
-  align-items: center;
-}
-.pos-rel {
-  position: relative;
-}
-.pos-abs {
-  position: absolute;
-}
-.pos-fixed {
-  position: fixed;
-}
-.pos-cnt {
-  position: absolute;
-  left: 50%;
-  transform: translate3d(-50%, 0, 0);
-}
-.x-cnt {
-  left: 50%;
-  transform: translate3d(-50%, 0, 0);
-}
-.y-cnt {
-  top: 50%;
-  transform: translate3d(0, -50%, 0);
-}
-.mx-auto {
-  margin-left: auto !important;
-  margin-right: auto !important;
+:root {
+  --color-white: #fffce1;
+  --color-grey: #42433d;
+  --color-black: #0e100f;
+  --color-green: #0ae448;
+  --color-lightgreen: #abff84;
+  --gra-green: 114deg, var(--color-green) 21%, var(--color-lightgreen) 65%;
 }
